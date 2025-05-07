@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="10dp"
+        android:background="@color/scrollViewBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/patnersTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/roboto_italic"
+
+                android:text="Credit Score powered by our Bureau Partners"
+                android:textColor="@color/patnersAndOffers"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@id/creditScoreCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/creditScoreCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/credit_score_card_background"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/patnersTextView">
+
+                <ImageView
+                    android:id="@+id/creditScoreMeter"
+                    android:layout_width="64dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/credi_score_meter"
+                    app:layout_constraintBottom_toTopOf="@id/creditScoreNumber"
+                    app:layout_constraintEnd_toStartOf="@id/creditScoreAlertTextView"
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/creditScoreNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="552"
+                    android:textColor="@color/defaultText"
+
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/creditScoreText"
+                    app:layout_constraintEnd_toEndOf="@id/creditScoreMeter"
+                    app:layout_constraintStart_toStartOf="@id/creditScoreMeter"
+                    app:layout_constraintTop_toBottomOf="@id/creditScoreMeter" />
+
+                <TextView
+                    android:id="@+id/creditScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Credit Score"
+                    android:textColor="@color/defaultText"
+
+                    android:textSize="8.11sp"
+                    app:layout_constraintBottom_toTopOf="@id/patnersPoweredByTextView"
+                    app:layout_constraintEnd_toEndOf="@id/creditScoreMeter"
+                    app:layout_constraintStart_toStartOf="@id/creditScoreMeter"
+                    app:layout_constraintTop_toBottomOf="@id/creditScoreNumber" />
+
+                <TextView
+                    android:id="@+id/patnersPoweredByTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_italic"
+                    android:text="powered by Bureau"
+                    android:textColor="@color/creditPatners"
+
+
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/creditScoreMeter"
+                    app:layout_constraintStart_toStartOf="@id/creditScoreMeter"
+                    app:layout_constraintTop_toBottomOf="@id/creditScoreText" />
+
+                <TextView
+                    android:id="@+id/creditScoreAlertTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="x negative accounts are impacting your credit score"
+                    android:textColor="@color/defaultText"
+
+
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/creditScoreResultTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/creditScoreMeter"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/creditScoreResultTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="You'll not get a loan from Banks or NBFCs or Fintechs due to your negative accounts"
+                    android:textColor="@color/defaultText"
+
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/creditScoreAlertTextView"
+                    app:layout_constraintStart_toStartOf="@id/creditScoreAlertTextView"
+                    app:layout_constraintTop_toBottomOf="@id/creditScoreAlertTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/creditFitCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/cardBackground"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/creditScoreCard">
+
+                <TextView
+                    android:id="@+id/creditFitSpanTextOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Improve your credit health with "
+
+                    android:textColor="@color/defaultText"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/creditFitSpanTextTwo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/creditFitSpanTextTwo" />
+
+                <TextView
+                    android:id="@+id/creditFitSpanTextTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+
+                    android:text="CreditFit’s"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/creditFitSpanTextOne"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/creditFitSpanTextOne">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/creditFitPersonalizedActionPlanCard"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_marginHorizontal="7.6dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/credit_fit_personalized_action_plan_card_background"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="10dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/creditFitAccountResolutionAssistenceCard"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/creditFitPersonalizedActionPlanImageView"
+                            android:layout_width="25.8dp"
+                            android:layout_height="37dp"
+                            android:src="@drawable/personalized_action_plan"
+                            app:layout_constraintBottom_toTopOf="@id/creditFitPersonalizedActionPlanTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/creditFitPersonalizedActionPlanTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Personalised action plan"
+                            android:textAlignment="center"
+
+                            android:textColor="@color/defaultText"
+                            android:textSize="11sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/creditFitPersonalizedActionPlanImageView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/creditFitAccountResolutionAssistenceCard"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_marginHorizontal="7.6dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/credit_fit_personalized_action_plan_card_background"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="10dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/creditFitPersonalizedActionPlanCard"
+                        app:layout_constraintRight_toLeftOf="@id/creditFitScoreBuilderLoanOffersCard"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/creditFitAccountResolutionAssistenceImageView"
+                            android:layout_width="25.8dp"
+                            android:layout_height="37dp"
+                            android:src="@drawable/account_resolution_assistance"
+                            app:layout_constraintBottom_toTopOf="@id/creditFitAccountResolutionAssistenceTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/creditFitAccountResolutionAssistenceTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Account resolution assistance"
+                            android:textAlignment="center"
+
+                            android:textColor="@color/defaultText"
+                            android:textSize="11sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/creditFitAccountResolutionAssistenceImageView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/creditFitScoreBuilderLoanOffersCard"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_marginHorizontal="7.6dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/credit_fit_personalized_action_plan_card_background"
+
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/creditFitAccountResolutionAssistenceCard"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/creditFitScoreBuilderLoanOffersImageView"
+                            android:layout_width="25.8dp"
+                            android:layout_height="37dp"
+                            android:src="@drawable/score_builder_loan_offers"
+                            app:layout_constraintBottom_toTopOf="@id/creditFitScoreBuilderLoanOffersTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/creditFitScoreBuilderLoanOffersTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Score builder loan offers"
+                            android:textAlignment="center"
+
+                            android:textColor="@color/defaultText"
+                            android:textSize="11sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/creditFitScoreBuilderLoanOffersImageView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/informationIcon"
+                android:layout_width="11.6dp"
+                android:layout_height="11.6dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/information_icon"
+                app:layout_constraintBottom_toTopOf="@id/accountSignUpCard"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/creditFitCard" />
+
+            <TextView
+                android:id="@+id/informationSpanTextViewOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto_medium"
+
+                android:text="To know more, "
+                android:textColor="@color/informationText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/informationIcon"
+                app:layout_constraintStart_toEndOf="@id/informationIcon"
+                app:layout_constraintTop_toTopOf="@id/informationIcon" />
+
+            <TextView
+                android:id="@+id/informatioSpanTextViewTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Click here"
+
+                android:textColor="@color/informationLink"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/informationSpanTextViewOne"
+                app:layout_constraintStart_toEndOf="@id/informationSpanTextViewOne"
+                app:layout_constraintTop_toTopOf="@id/informationSpanTextViewOne" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/accountSignUpCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/account_signup_card_background"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/informationIcon">
+
+                <TextView
+                    android:id="@+id/accountSignUpHintTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Choose from the below negative accounts and signup to avoid further drop in your credit score"
+                    android:textColor="@color/defaultText"
+
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/accountSignUpOfferCard"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/accountSignUpOfferCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/account_signup_offer_card_background"
+                    app:layout_constraintBottom_toTopOf="@id/personalLoanCard"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/accountSignUpHintTextView">
+
+                    <ImageView
+                        android:id="@+id/accountSignUpOfferCardIcon"
+                        android:layout_width="19dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/account_signup_offer_card_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/accountSignUpOfferCardTextView"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/accountSignUpOfferCardTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Get up to 25% off when you choose more than 1 account"
+                        android:textColor="@color/patnersAndOffers"
+
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toBottomOf="@id/accountSignUpOfferCardIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/accountSignUpOfferCardIcon"
+                        app:layout_constraintTop_toTopOf="@id/accountSignUpOfferCardIcon"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/personalLoanCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:background="@drawable/personal_loan_card_background"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toBottomOf="@id/accountSignUpOfferCard">
+
+                    <ImageView
+                        android:id="@+id/personalLoanCardIcon"
+                        android:layout_width="28.85dp"
+                        android:layout_height="28.85dp"
+                        android:src="@drawable/hdfc_logo"
+                        app:layout_constraintEnd_toStartOf="@id/personalLoanCardBankNameTextView"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/personalLoanCardBankNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="HDFC BANK"
+
+                        android:textColor="@color/patnersAndOffers"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@id/personalLoanTextView"
+                        app:layout_constraintStart_toEndOf="@id/personalLoanCardIcon"
+                        app:layout_constraintTop_toTopOf="@id/personalLoanCardIcon" />
+
+                    <TextView
+                        android:id="@+id/personalLoanTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Personal Loan -"
+
+                        android:textColor="@color/defaultText"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/personalLoanCardIcon"
+                        app:layout_constraintStart_toEndOf="@id/personalLoanCardIcon"
+                        app:layout_constraintTop_toBottomOf="@id/personalLoanCardBankNameTextView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text=" xxxx 1234"
+                        android:textColor="@color/defaultText"
+
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/personalLoanTextView"
+                        app:layout_constraintStart_toEndOf="@id/personalLoanTextView"
+                        app:layout_constraintTop_toTopOf="@id/personalLoanTextView" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/personalLoanCardSummaryView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toBottomOf="@id/personalLoanTextView">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/personalLoanCardDateTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/personalLoanCardAccountStatusTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/personalLoanHintDateTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Last updated on"
+
+                                android:textColor="@color/loanCardHintText"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toTopOf="@id/personalLoanResultDateTextView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/personalLoanResultDateTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+
+                                android:text="30 Apr 2024"
+                                android:textColor="@color/loanCardResultText"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/personalLoanHintDateTextView"
+                                app:layout_constraintTop_toBottomOf="@id/personalLoanHintDateTextView" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/personalLoanCardAccountStatusTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/personalLoanCardDateTextView">
+
+                            <TextView
+                                android:id="@+id/personalLoanHintAccountTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Account Status"
+
+                                android:textColor="@color/loanCardHintText"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toTopOf="@id/personalLoanResultAccountTextView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/personalLoanResultAccountTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+
+                                android:text="720+ days past due"
+                                android:textColor="@color/loanCardResultText"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/personalLoanHintAccountTextView"
+                                app:layout_constraintTop_toBottomOf="@id/personalLoanHintAccountTextView" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/personalLoanCardDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="9dp"
+                        app:layout_constraintBottom_toTopOf="@id/personalLoanCardAmountTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toBottomOf="@id/personalLoanCardSummaryView" />
+
+                    <TextView
+                        android:id="@+id/personalLoanCardAmountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="₹1,585"
+
+                        android:textColor="@color/informationText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personalLoanCardDivider" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="72dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/loan_card_button_background"
+                        app:layout_constraintBottom_toBottomOf="@id/personalLoanCardAmountTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/personalLoanCardAmountTextView">
+
+                        <TextView
+                            android:id="@+id/personalLoanCardButtonText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Remove"
+                            android:textColor="@color/loanCardButton"
+
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/personalLoanCardButtonIcon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/personalLoanCardButtonIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/personal_loan_button_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            app:layout_constraintStart_toEndOf="@id/personalLoanCardButtonText"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/homeLoanCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:background="@drawable/personal_loan_card_background"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toBottomOf="@id/personalLoanCard">
+
+                    <ImageView
+                        android:id="@+id/homeLoanCardIcon"
+                        android:layout_width="28.85dp"
+                        android:layout_height="28.85dp"
+                        android:src="@drawable/hdfc_logo"
+                        app:layout_constraintEnd_toStartOf="@id/homeLoanCardBankNameTextView"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homeLoanCardBankNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="HDFC BANK"
+
+                        android:textColor="@color/patnersAndOffers"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@id/homeLoanTextView"
+                        app:layout_constraintStart_toEndOf="@id/homeLoanCardIcon"
+                        app:layout_constraintTop_toTopOf="@id/homeLoanCardIcon" />
+
+                    <TextView
+                        android:id="@+id/homeLoanTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Home Loan -"
+
+                        android:textColor="@color/defaultText"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/homeLoanCardIcon"
+                        app:layout_constraintStart_toEndOf="@id/homeLoanCardIcon"
+                        app:layout_constraintTop_toBottomOf="@id/homeLoanCardBankNameTextView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text=" xxxx 5648"
+                        android:textColor="@color/defaultText"
+
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/homeLoanTextView"
+                        app:layout_constraintStart_toEndOf="@id/homeLoanTextView"
+                        app:layout_constraintTop_toTopOf="@id/homeLoanTextView" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/homeLoanCardSummaryView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toBottomOf="@id/homeLoanTextView">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/homeLoanCardDateTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/homeLoanCardAccountStatusTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/homeLoanHintDateTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Last updated on"
+
+                                android:textColor="@color/loanCardHintText"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toTopOf="@id/homeLoanResultDateTextView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/homeLoanResultDateTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+
+                                android:text="30 Apr 2024"
+                                android:textColor="@color/loanCardResultText"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/homeLoanHintDateTextView"
+                                app:layout_constraintTop_toBottomOf="@id/homeLoanHintDateTextView" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/homeLoanCardAccountStatusTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/homeLoanCardDateTextView">
+
+                            <TextView
+                                android:id="@+id/homeLoanHintAccountTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Account Status"
+
+                                android:textColor="@color/loanCardHintText"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toTopOf="@id/homeLoanResultAccountTextView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/homeLoanResultAccountTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+
+                                android:text="written off"
+                                android:textColor="@color/loanCardResultText"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/homeLoanHintAccountTextView"
+                                app:layout_constraintTop_toBottomOf="@id/homeLoanHintAccountTextView" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/homeLoanCardDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="9dp"
+                        app:layout_constraintBottom_toTopOf="@id/homeLoanCardAmountTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toBottomOf="@id/homeLoanCardSummaryView" />
+
+                    <TextView
+                        android:id="@+id/homeLoanCardAmountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="₹1,585"
+
+                        android:textColor="@color/informationText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeLoanCardDivider" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="72dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/loan_card_button_background"
+                        app:layout_constraintBottom_toBottomOf="@id/homeLoanCardAmountTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/homeLoanCardAmountTextView">
+
+                        <TextView
+                            android:id="@+id/homeLoanCardButtonText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Add"
+                            android:textColor="@color/loanCardButton"
+
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/assistanceCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="15dp"
+                android:background="@drawable/assistance_card"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="9dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accountSignUpCard">
+
+                <ImageView
+                    android:id="@+id/assistanceCardImage"
+                    android:layout_width="69dp"
+                    android:layout_height="58dp"
+                    android:src="@drawable/assistance_card_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/assistanceCardSpanTextOne"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Need Assistance?"
+
+                    android:textAlignment="center"
+                    android:textColor="@color/defaultText"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/assistanceCardButton"
+                    app:layout_constraintStart_toEndOf="@id/assistanceCardImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/assistanceCardSpanTextTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text=" Talk to our Credit Health Expert "
+
+                    android:textAlignment="center"
+                    android:textColor="@color/defaultText"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/assistanceCardButton"
+                    app:layout_constraintStart_toEndOf="@id/assistanceCardImage"
+                    app:layout_constraintTop_toBottomOf="@id/assistanceCardSpanTextOne" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/assistanceCardButton"
+                    android:layout_width="86dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/assistance_card_button_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/assistanceCardSpanTextTwo"
+
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Talk Now"
+                        android:textColor="@color/informationLink"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/viewCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/view_card_background"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assistanceCard">
+
+                <ImageView
+                    android:id="@+id/viewCardImage"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/view_card_image"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/viewCardIndexNumber"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/view_card_index_number_background"
+
+                    android:gravity="center"
+                    android:text="1/2"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/viewCardQuestionsTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="40dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="What happens after I buy?"
+
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@id/viewCardImage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewCardIndexNumber" />
+
+                <TextView
+                    android:id="@+id/viewCardSpanTextViewOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_regular"
+
+                    android:text="1."
+                    android:textColor="@color/defaultText"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewCardImage" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="Build your score with exlusive score builder loan offers"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toEndOf="@id/viewCardSpanTextViewOne"
+                    app:layout_constraintTop_toTopOf="@id/viewCardSpanTextViewOne" />
+
+                <TextView
+                    android:id="@+id/viewCardSpanTextViewTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_regular"
+
+                    android:text="2."
+                    android:textColor="@color/defaultText"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewCardSpanTextViewOne" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="Our credit expert will assist you with resolving your negative accounts"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toEndOf="@id/viewCardSpanTextViewTwo"
+                    app:layout_constraintTop_toTopOf="@id/viewCardSpanTextViewTwo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/customerReviewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Hear it from our customers"
+
+                android:textColor="@color/defaultText"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewCard" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/customerReviewCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/customer_review_card_background"
+                android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/customerReviewTitle">
+
+                <ImageView
+                    android:id="@+id/quotesIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/quotes"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/customerReviewTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/roboto_italic"
+                    android:lineSpacingExtra="5dp"
+
+                    android:text="I am thankful to you and the CreditMantri team for helping me improve my credit score from 673 to 771 in 6 months. I am happy to see your dedication towards your clients and helping them to improve their score. I am going to refer to all my friends and family willingly about your services."
+                    android:textColor="@color/informationText"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/quotesIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_mediumitalic"
+                    android:text="- R Kumar"
+                    android:textColor="@color/defaultText"
+
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/customerReviewTextView"
+                    app:layout_constraintTop_toBottomOf="@id/customerReviewTextView" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/frequentlyAskedQuestionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_medium"
+
+                android:text="Frequently asked Questions"
+                android:textColor="@color/defaultText"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customerReviewCard" />
+
+            <com.example.uidesign.NoScrollExListView
+                android:id="@+id/exListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:childIndicator="@null"
+                android:divider="@null"
+
+                android:dividerHeight="0dp"
+                android:groupIndicator="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frequentlyAskedQuestionTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

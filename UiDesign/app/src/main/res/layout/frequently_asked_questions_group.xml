@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frequentlyAskedQuestionsGroup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/scrollViewBackground"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/frequently_asked_questions_group_background"
+        android:layout_height="wrap_content"
+        >
+
+
+        <TextView
+            android:id="@+id/frequentlyAskedQuestionsQuestionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="15dp"
+            android:text="What will happen after I pay CreditMantri Rs 1585? Is it possible to improve my credit score?"
+
+            android:textColor="@color/defaultText"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/frequentlyAskedQuestionsQuestionImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingBottom="15dp"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/frequentlyAskedQuestionsQuestionImageView"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/frequently_asked_questions_icon_button_background"
+            android:src="@drawable/down_arraow_icon"
+            app:layout_constraintBottom_toBottomOf="@id/frequentlyAskedQuestionsQuestionTextView"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/frequentlyAskedQuestionsQuestionTextView"
+            app:layout_constraintTop_toTopOf="@id/frequentlyAskedQuestionsQuestionTextView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        app:layout_constraintTop_toBottomOf="@id/frequentlyAskedQuestionsQuestionImageView"
+        android:id="@+id/view_hidden"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/scrollViewBackground" />
+</LinearLayout>

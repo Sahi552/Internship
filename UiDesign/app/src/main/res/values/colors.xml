@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="appBarBackground">#041426</color>
+    <color name="scrollViewBackground">#F3F3F3</color>
+    <color name="cardBackground">#EAF4DD</color>
+
+    <color name="patnersAndOffers">#666666</color>
+    <color name="defaultText">#313131</color>
+    <color name="creditPatners">#999999</color>
+    <color name="informationText">#4D4D4D</color>
+    <color name="informationLink">#F0A53B</color>
+
+    <color name="loanCardBorder">#D6D6D6</color>
+    <color name="loanCardHintText">#8A8F99</color>
+    <color name="loanCardResultText">#282F40</color>
+    <color name="loanCardButton">#F1A62F</color>
+
+    <color name="transparent">#00000000</color>
+
+</resources>

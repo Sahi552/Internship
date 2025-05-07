@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/frequentlyAskedQuestionsItems">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/frequentlyAskedQuestionsAnswersTextView"
+        android:text="ExpandableListView is a very useful mandatory feature used in many apps. In mobile app sizes and the available space, to show multiple items, one should need features like ExpandableListView and ExpandableListAdapter so the view can fit perfectly."
+        android:textSize="12sp"
+        android:fontFamily="@font/roboto_mediumitalic"
+        android:textColor="@color/defaultText"
+        android:lineSpacingExtra="5dp"
+        android:background="@color/white"
+        android:paddingVertical="10dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="30dp"
+        />
+    <View
+        android:id="@+id/view_hidden"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/scrollViewBackground" />
+
+
+</LinearLayout>
