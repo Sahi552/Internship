@@ -3,6 +3,8 @@ package com.example.retrofitapi
 import UniversityModelItem
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -45,50 +47,59 @@ class ApiScreen : AppCompatActivity(), OnItemClickListener {
 
         val apiData = intent.extras?.getString("countryName")
 
-        if (apiData == null) {
-            isLoading = false
-        } else {
-            isLoading = true
+        isLoading = apiData != null
+
+        fun isInternetAvailable(): Boolean {
+            val connectivityManager =
+                getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+
+            val network = connectivityManager.activeNetwork ?: return false
+            val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+            return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
+                    capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
         }
 
-        if (isLoading) {
-            messageView.text = loadingMessage
-            progressBar.visibility = View.VISIBLE
-            linearLayout.visibility = View.GONE
-            recyclerView.visibility = View.GONE
+        if (isInternetAvailable() == true) {
+            if (isLoading) {
+                messageView.text = loadingMessage
+                progressBar.visibility = View.VISIBLE
+                linearLayout.visibility = View.GONE
+                recyclerView.visibility = View.GONE
 
-            lifecycleScope.launch {
-                try {
-                    //apicall
-                    val apiCall = ApiHelper.instance().create(ApiRequest::class.java)
+                lifecycleScope.launch {
+                    try {
+                        //apicall
+                        val apiCall = ApiHelper.instance().create(ApiRequest::class.java)
 
-                    //get response body
-                    val result = apiCall.getCollage(apiData.toString())
+                        //get response body
+                        val result = apiCall.getCollage(apiData.toString())
 
-                    //successfully retrieved
-                    if (result.isSuccessful) {
-                        progressBar.visibility = View.GONE
-                        messageView.visibility = View.GONE
-                        linearLayout.visibility = View.VISIBLE
-                        recyclerView.visibility = View.VISIBLE
+                        //successfully retrieved
+                        if (result.isSuccessful) {
+                            progressBar.visibility = View.GONE
+                            messageView.visibility = View.GONE
+                            linearLayout.visibility = View.VISIBLE
+                            recyclerView.visibility = View.VISIBLE
 
-                        val dataset = result.body()
-                        val recyclerAdapter = RecyclerAdopter(dataset, this@ApiScreen)
-                        recyclerView.layoutManager = LinearLayoutManager(this@ApiScreen)
-                        recyclerView.adapter = recyclerAdapter
-                    } else {
-                        recyclerView.visibility = View.GONE
-                        progressBar.visibility = View.GONE
-                        linearLayout.visibility = View.GONE
-                        messageView.text = failedMessage
-                        Toast.makeText(
-                            this@ApiScreen,
-                            "Fetching data was failed",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                            val dataset = result.body()
+                            val recyclerAdapter = RecyclerAdopter(dataset, this@ApiScreen)
+                            recyclerView.layoutManager = LinearLayoutManager(this@ApiScreen)
+                            recyclerView.adapter = recyclerAdapter
+                        } else {
+                            recyclerView.visibility = View.GONE
+                            progressBar.visibility = View.GONE
+                            linearLayout.visibility = View.GONE
+                            messageView.text = failedMessage
+                            Toast.makeText(
+                                this@ApiScreen,
+                                "Fetching data was failed",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } catch (e: Exception) {
+                        Log.e("YourAPIResponse", "Exception: ${e.message}")
                     }
-                } catch (e: Exception) {
-                    Log.e("YourAPIResponse", "Exception: ${e.message}")
                 }
             }
         } else {
@@ -99,7 +110,6 @@ class ApiScreen : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun itemClick(position: Int, context: Context, currentItem: UniversityModelItem?) {
-        Toast.makeText(this@ApiScreen, "$position is clicked", Toast.LENGTH_SHORT).show()
         val intent = Intent(context, ExpandedScreen::class.java)
         intent.putExtra("name", currentItem?.name)
         intent.putExtra("domains", currentItem?.domains[0])
