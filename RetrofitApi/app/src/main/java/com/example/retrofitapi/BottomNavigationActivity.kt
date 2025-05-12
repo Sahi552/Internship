@@ -4,41 +4,33 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.retrofitapi.databinding.ActivityBottomNavigationBinding
 
 class BottomNavigationActivity : AppCompatActivity() {
 
     val homeFragment = HomeFragment()
     val collageFragment = CollageFragment()
-    private lateinit var bottomNavigationActivity: BottomNavigationView
     private val viewModel: ItemViewModel by viewModels()
+    private lateinit var binding: ActivityBottomNavigationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_bottom_navigation)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityBottomNavigationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
         transaction.add(R.id.frameLayout, HomeFragment())
         transaction.commit()
 
-        bottomNavigationActivity = findViewById<BottomNavigationView>(R.id.bottomNavigationBar)
-
-        bottomNavigationActivity.setOnItemSelectedListener {
+        binding.bottomNavigationBar.setOnItemSelectedListener {
             try {
                 when (it.itemId) {
                     R.id.homeView -> {
                         loadFragment(homeFragment)
-                        viewModel.message = "Home Button Clicked"
+                        viewModel.message = "Home Button CLicked"
                         true
                     }
 
@@ -57,11 +49,11 @@ class BottomNavigationActivity : AppCompatActivity() {
     }
 
     private fun loadFragment(fragment: Fragment) {
-
-        if (true) {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frameLayout, fragment)
-            transaction.commit()
-        }
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        transaction.replace(R.id.frameLayout, fragment)
+        transaction.commit()
     }
+
 }
+

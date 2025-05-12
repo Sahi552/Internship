@@ -16,7 +16,7 @@ class CollageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCollageBinding.inflate(inflater, container, false)
+        binding = FragmentCollageBinding.inflate(layoutInflater)
 
         return binding.root
     }

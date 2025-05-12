@@ -5,9 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiHelper {
 
-    val API_URL = "http://universities.hipolabs.com"
+    const val API_URL = "http://universities.hipolabs.com"
 
-    fun instance(): Retrofit{
+    fun instance(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(API_URL)
             .addConverterFactory(GsonConverterFactory.create())
